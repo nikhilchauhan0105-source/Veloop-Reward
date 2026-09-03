@@ -176,28 +176,29 @@ const ForgotPassword = () => {
         )}
 
         {step === 3 && (
-          <form onSubmit={handleResetPassword}>
+          <form className='space-y-3' onSubmit={handleResetPassword}>
             <p className="text-center text-muted mb-4 text-sm">
               Create a new strong password for your account.
             </p>
             
-            <PasswordInput 
-              name="password"
-              placeholder="New Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
+          
+              <PasswordInput
+                name="password"
+                placeholder="New Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              
+              {password.length > 0 && (
+                <PasswordChecklist password={password} />
+              )}
+              <PasswordInput
+                name="confirmPassword"
+                placeholder="Confirm New Password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
             
-            {password.length > 0 && (
-              <PasswordChecklist password={password} />
-            )}
-
-            <PasswordInput 
-              name="confirmPassword"
-              placeholder="Confirm New Password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-            />
 
             <button type="submit" className={submitBtnClass}>
               Reset Password <ArrowRight className="group-hover:translate-x-1 transition-all duration-200" size={18} />

@@ -101,7 +101,7 @@ const Login = () => {
               </Link>
             </div>
 
-            <button type="submit" className="w-full py-2 rounded-[20px] bg-[var(--primary-color)] text-white font-semibold text-[1rem] mt-[10px] mb-[20px] flex items-center justify-center gap-2 transition-transform duration-200 active:scale-[0.98] group">
+            <button type="submit" className="w-full py-2 rounded-[10px]! bg-[var(--primary-color)] text-white font-semibold text-[1rem] mt-[10px] mb-[20px] flex items-center justify-center gap-2 transition-transform duration-200 active:scale-[0.98] group">
               Login<ArrowRight className="group-hover:translate-x-1 transition-all duration-200" size={18} />
             </button>
           </form>
@@ -110,7 +110,7 @@ const Login = () => {
 
         
           <div className="text-center  py-1 ">
-            <Link to="" className="w-full py-2 bg-white border border-[#ddd] rounded-[20px] flex items-center justify-center gap-[10px] font-semibold text-[#333] cursor-pointer transition-colors duration-200 hover:bg-[#f8f9fa]" onClick={handleGoogleLogin}>
+            <Link to="" className="w-full py-2 flex items-center justify-center gap-[10px] font-semibold text-[#333] cursor-pointer transition-colors duration-200 hover:bg-[#f8f9fa]" onClick={handleGoogleLogin}>
               <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" width="20" height="20" />
               Continue with Google
             </Link>
@@ -119,12 +119,12 @@ const Login = () => {
 
         <div className="text-center  pt-2">
           <span className="text-muted">Don't have an account? </span>
-          <Link to="/register" style={{ color: 'var(--primary-color)', textDecoration: 'none', fontWeight: 600 }}>
+          <Link to="/register" className="text-[var(--primary-color)] text-decoration-none font-semibold">
             Create Account
           </Link>
         </div>
 
-        <div className="mt-[45px] relative border border-[#eaeaea] rounded-[12px] py-[16px] px-[20px] flex justify-between items-center">
+        <div className="hidden lg:flex mt-[45px] relative border border-[#eaeaea] rounded-[12px] py-[16px] px-[20px] flex justify-between items-center">
           <div className="flex items-center gap-[12px]">
             <div className="w-[38px] h-[38px] rounded-full flex items-center justify-center border-[1.5px] bg-[#f2fcf5] border-[#d1f4db] text-[#12b76a]">
               <ShieldCheck size={20} />

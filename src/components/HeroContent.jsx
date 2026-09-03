@@ -4,12 +4,12 @@ import { Target, Users, Award, Briefcase, Gem, ShieldCheck, Gift, Shield } from 
 
 const HeroContent = ({ title = "Welcome Back!", showStats = true , description }) => {
   return (
-    <div className="flex flex-col justify-between relative h-full">
+    <div className="flex max-md:pl-4 flex-col justify-between relative h-full">
     
 
   
         <div className="mt-4 lg:mt-20">
-          <h1 className="text-lg md:text-5xl font-[700] mb-2.5 leading-[120%] text-black">
+          <h1 className="text-lg md:text-5xl font-[800] mb-2.5 leading-[120%] text-black">
             {title}
           </h1>
           <p className="hidden lg:block font-[650]  sm:text-[1.4rem] mb-4 text-[var(--primary-color)]">
@@ -17,8 +17,7 @@ const HeroContent = ({ title = "Welcome Back!", showStats = true , description }
             <br />
           </p>
           <p className="max-sm:max-w-[200px] font-semibold text-black/70 mt-0 max-w-[380px]">
-            {/* Jointhousands of users who earn exciting $20 Email Address rewards
-            everyday with VELOOPRewards. */}
+
             {description}
           </p>
         </div>
@@ -59,7 +58,7 @@ const HeroContent = ({ title = "Welcome Back!", showStats = true , description }
 
 
       <div className="hidden lg:flex flex-col w-full mt-auto">
-        <div className='w-full flex items-center justify-between py-7 px-4 bg-[var(--primary-color)]/10 backdrop-blur-sm rounded-[16px]'>
+        <div className='w-full grid grid-cols-2 gap-3  xl:grid-cols-3 gap-1 py-7 px-4 bg-[var(--primary-color)]/10 backdrop-blur-sm rounded-[16px]'>
           
           <div className="flex items-center gap-3">
             <div className="w-[42px] h-[42px] rounded-full bg-white flex items-center justify-center shadow-sm">

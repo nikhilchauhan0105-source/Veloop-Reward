@@ -11,17 +11,17 @@ const PasswordChecklist = ({ password }) => {
   ];
 
   return (
-    <div className="bg-light p-3 rounded mb-4" style={{ fontSize: '0.85rem' }}>
-      <p className="mb-2 fw-bold text-muted">Password must contain:</p>
-      <ul className="list-unstyled mb-0">
+    <div className="bg-[#f8f6fb] p-4 rounded-[12px] mb-4 text-[0.85rem]">
+      <p className="mb-3 font-semibold text-[#333]">Password must contain:</p>
+      <ul className="flex flex-col gap-2 m-0 p-0 list-none">
         {requirements.map((req, idx) => {
           const isMet = req.test(password);
           return (
-            <li key={idx} className={`d-flex align-items-center mb-1 ${isMet ? 'text-success' : 'text-muted'}`}>
+            <li key={idx} className={`flex items-center gap-2 ${isMet ? 'text-[var(--primary-color)]' : 'text-[#666]'}`}>
               {isMet ? (
-                <CheckCircle2 size={14} className="me-2" />
+                <CheckCircle2 size={16} className="text-[#28a745]" />
               ) : (
-                <Circle size={14} className="me-2" />
+                <Circle size={16} className="text-[#ccc]" />
               )}
               {req.label}
             </li>

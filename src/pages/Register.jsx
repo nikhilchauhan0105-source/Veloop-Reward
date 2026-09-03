@@ -54,39 +54,50 @@ const Register = () => {
   const inputGroupClass = "relative mb-3 lg: flex items-center";
   const inputIconClass = "absolute left-[15px] text-[#888] z-10";
   const inputClass = "w-full mt-[10px] pl-[45px] py-2 pr-[45px]  rounded-[12px] bg-[#f8f9fa] border-2 border-[#e9ecef] transition-all duration-300 outline-none focus:bg-white focus:border-[var(--primary-light)] focus:shadow-[0_0_0_0.25rem_rgba(156,39,176,0.1)]";
-  const submitBtnClass = "w-full py-2 rounded-[20px] bg-[var(--primary-color)] text-white font-semibold text-[1rem] mt-[10px] mb-[20px] flex items-center justify-center gap-2 transition-transform duration-200 active:scale-[0.98] group";
+  const submitBtnClass = "w-full py-2 rounded-xl! bg-[var(--primary-color)] text-white font-semibold text-[1rem] mt-[10px] mb-[20px] flex items-center justify-center gap-2 transition-transform duration-200 active:scale-[0.98] group";
 
   return (
-    <AuthLayout heroContent={<HeroContent title="Create Your Account" description={"Join Veloop Reward and start earning exited rewards"} />}>
-      <div className="w-full max-w-[600px] mx-auto">
+    <AuthLayout
+      heroContent={
+        <HeroContent
+          title="Create Your Account"
+          description={"Join Veloop Reward and start earning exited rewards"}
+        />
+      }
+    >
+      <div className="w-full ">
         <div className="mb-3 text-center">
-          <h2 className="text-[1.8rem] font-bold text-[#333] mb-[5px]">Join VELOOP Rewards</h2>
-          <p className="text-[#666] text-[0.95rem]">Start earning exciting rewards today.</p>
+          <h2 className="text-[1.8rem] font-bold text-[#333] mb-[5px]">
+            Join VELOOP Rewards
+          </h2>
+          <p className="text-[#666] text-[0.95rem]">
+            Start earning exciting rewards today.
+          </p>
         </div>
 
         <div className="flex border-b border-[#eee] mb-[25px]">
-          <button 
-            className={`${tabBaseClass} ${activeTab === 'email' ? tabActiveClass : ''}`}
-            onClick={() => setActiveTab('email')}
+          <button
+            className={`${tabBaseClass} ${activeTab === "email" ? tabActiveClass : ""}`}
+            onClick={() => setActiveTab("email")}
           >
             <Mail size={20} /> Email Register
           </button>
-          <button 
-            className={`${tabBaseClass} ${activeTab === 'otp' ? tabActiveClass : ''}`}
-            onClick={() => setActiveTab('otp')}
+          <button
+            className={`${tabBaseClass} ${activeTab === "otp" ? tabActiveClass : ""}`}
+            onClick={() => setActiveTab("otp")}
           >
             <Smartphone size={20} /> OTP Register
           </button>
         </div>
 
-        {activeTab === 'email' && (
+        {activeTab === "email" && (
           <form onSubmit={handleRegister}>
             <div className={inputGroupClass}>
               <User className={inputIconClass} size={20} />
-              <input 
-                type="text" 
+              <input
+                type="text"
                 className={inputClass}
-                placeholder="Full Name" 
+                placeholder="Full Name"
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleChange}
@@ -96,25 +107,25 @@ const Register = () => {
 
             <div className={inputGroupClass}>
               <Mail className={inputIconClass} size={20} />
-              <input 
-                type="email" 
+              <input
+                type="email"
                 className={inputClass}
-                placeholder="Email Address" 
+                placeholder="Email Address"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
                 required
               />
             </div>
-            
+
             <div className="mb-3 grid grid-cols-1 min-[576px]:grid-cols-2 gap-3 min-[576px]:gap-[15px]">
-              <PasswordInput 
+              <PasswordInput
                 name="password"
                 placeholder="Create password"
                 value={formData.password}
                 onChange={handleChange}
               />
-              <PasswordInput 
+              <PasswordInput
                 name="confirmPassword"
                 placeholder="Confirm password"
                 value={formData.confirmPassword}
@@ -128,10 +139,10 @@ const Register = () => {
 
             <div className={inputGroupClass}>
               <Gift className={inputIconClass} size={20} />
-              <input 
-                type="text" 
+              <input
+                type="text"
                 className={inputClass}
-                placeholder="Referral Code (Optional)" 
+                placeholder="Referral Code (Optional)"
                 name="referralCode"
                 value={formData.referralCode}
                 onChange={handleChange}
@@ -139,46 +150,97 @@ const Register = () => {
             </div>
 
             <div className="flex items-center gap-2 mb-4 mt-3 pl-1">
-              <input 
-                className="cursor-pointer rounded-[4px] w-[18px] h-[18px] mt-0 checked:bg-[var(--primary-color)] checked:border-[var(--primary-color)] m-0" 
-                type="checkbox" 
-                id="termsCheck" 
+              <input
+                className="cursor-pointer rounded-[4px] w-[18px] h-[18px] mt-0 checked:bg-[var(--primary-color)] checked:border-[var(--primary-color)] m-0"
+                type="checkbox"
+                id="termsCheck"
                 checked={agreed}
                 onChange={(e) => setAgreed(e.target.checked)}
               />
-              <label className="text-muted m-0 text-[0.85rem]" htmlFor="termsCheck">
-                I agree to the <a href="#" style={{color: 'var(--primary-color)', textDecoration: 'none', fontWeight: 600}}>Terms of Service</a> and <a href="#" style={{color: 'var(--primary-color)', textDecoration: 'none', fontWeight: 600}}>Privacy Policy</a>
+              <label
+                className="text-muted m-0 text-[0.85rem]"
+                htmlFor="termsCheck"
+              >
+                I agree to the{" "}
+                <a
+                  href="#"
+                  style={{
+                    color: "var(--primary-color)",
+                    textDecoration: "none",
+                    fontWeight: 600,
+                  }}
+                >
+                  Terms of Service
+                </a>{" "}
+                and{" "}
+                <a
+                  href="#"
+                  style={{
+                    color: "var(--primary-color)",
+                    textDecoration: "none",
+                    fontWeight: 600,
+                  }}
+                >
+                  Privacy Policy
+                </a>
               </label>
             </div>
 
             <button type="submit" className={submitBtnClass}>
-              Create Account <ArrowRight className="group-hover:translate-x-1 transition-all duration-200" size={18} />
+              Create Account{" "}
+              <ArrowRight
+                className="group-hover:translate-x-1 transition-all duration-200"
+                size={18}
+              />
             </button>
           </form>
         )}
 
-        {activeTab === 'otp' && (
+        {activeTab === "otp" && (
           <div className="text-center py-5">
             <Phone size={48} className="text-muted mx-auto mb-3" />
             <h5>Phone OTP Registration</h5>
-            <p className="text-muted">Enter your phone number to receive a verification code.</p>
+            <p className="text-muted">
+              Enter your phone number to receive a verification code.
+            </p>
             {/* Dummy state for OTP reg */}
-            <button className="px-6 py-2 bg-[var(--primary-color)] text-white rounded-[20px] font-semibold mt-3 transition-transform duration-200 active:scale-[0.98]" onClick={() => toast('OTP Feature Coming Soon!')}>
+            <button
+              className="px-6 py-2 bg-[var(--primary-color)] text-white rounded-[20px]! font-semibold mt-3 transition-transform duration-200 active:scale-[0.98]"
+              onClick={() => toast("OTP Feature Coming Soon!")}
+            >
               Send Verification Code
             </button>
           </div>
         )}
 
-        <div className="flex items-center text-center text-[#aaa] my-[15px] text-[0.85rem] before:content-[''] before:flex-1 before:border-b before:border-[#eee] before:mr-[15px] after:content-[''] after:flex-1 after:border-b after:border-[#eee] after:ml-[15px]">OR</div>
+        <div className="flex items-center text-center text-[#aaa] my-2 sm:my-[15px] text-[0.85rem] before:content-[''] before:flex-1 before:border-b before:border-[#eee] before:mr-[15px] after:content-[''] after:flex-1 after:border-b after:border-[#eee] after:ml-[15px]">
+          OR
+        </div>
 
-        <button type="button" className="w-full py-2 bg-white border border-[#ddd] rounded-[20px] flex items-center justify-center gap-[10px] font-semibold text-[#333] cursor-pointer transition-colors duration-200 hover:bg-[#f8f9fa]" onClick={handleGoogleSignUp}>
-          <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" width="20" height="20" />
-          Google Sign Up
+        <button
+          type="button"
+          className="w-full py-2 hover:underline hover:underline-offset-2 flex items-center justify-center gap-[10px] font-semibold text-[#333] cursor-pointer transition-colors duration-200 "
+          onClick={handleGoogleSignUp}
+        >
+          <img
+            src="https://www.svgrepo.com/show/475656/google-color.svg"
+            alt="Google"
+            width="20"
+            height="20"
+          />
+          Sign Up with Google
         </button>
 
         <div className="text-center mt-4">
           <span className="text-muted">Already have an account? </span>
-          <Link to="/login" style={{ color: 'var(--primary-color)', textDecoration: 'none', fontWeight: 600 }}>
+          <Link
+            to="/login"
+            style={{
+              color: "var(--primary-color)",
+              textDecoration: "none",
+              fontWeight: 600,
+            }}
+          >
             Login
           </Link>
         </div>
@@ -187,13 +249,15 @@ const Register = () => {
           <div className="flex items-center gap-[8px] text-[0.75rem] text-[#555]">
             <ShieldCheck className="text-[var(--primary-color)]" size={18} />
             <div>
-              <strong>Secure Sign Up</strong><br/>
+              <strong>Secure Sign Up</strong>
+              <br />
             </div>
           </div>
           <div className="flex items-center gap-[8px] text-[0.75rem] text-[#555]">
             <Gift className="text-[var(--primary-color)]" size={18} />
             <div>
-              <strong>Earn Rewards</strong><br/>
+              <strong>Earn Rewards</strong>
+              <br />
             </div>
           </div>
         </div>
