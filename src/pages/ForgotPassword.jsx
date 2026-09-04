@@ -80,17 +80,17 @@ const ForgotPassword = () => {
   };
 
   const inputClass = "w-full pl-[45px] py-2 pr-[45px]  rounded-[12px] bg-[#f8f9fa] border-2 border-[#e9ecef] transition-all duration-300 outline-none focus:bg-white focus:border-[var(--primary-light)] focus:shadow-[0_0_0_0.25rem_rgba(156,39,176,0.1)]";
-  const submitBtnClass = "w-full py-2 rounded-[20px] bg-[var(--primary-color)] text-white font-semibold text-[1rem] mt-[10px] mb-[20px] flex items-center justify-center gap-2 transition-transform duration-200 active:scale-[0.98] group";
+  const submitBtnClass = "w-full py-2 rounded-sm! md:rounded-[20px]! bg-[var(--primary-color)] text-white font-semibold text-[1rem] mt-[10px] mb-[20px] flex items-center justify-center gap-2 transition-transform duration-200 active:scale-[0.98] group";
 
   return (
   <AuthLayout heroContent={<HeroContent title="Forgot Password?" showStats={false} description={"No worries Reset your password in few simple steps."} />}>
       <div className="w-full max-w-[450px] mx-auto">
-        <div className="mb-[30px] text-center">
+        <div className="mb-2.5 sm:mb-[30px] text-center">
           <h2 className="text-[1.8rem] font-bold text-[#333] mb-[10px]">Password Reset</h2>
-          <p className="text-[#666] text-[0.95rem]">No worries! Reset your password in a few simple steps.</p>
+          <p className="text-[#666] text-xs sm:text-[0.95rem]">No worries! Reset your password in a few simple steps.</p>
         </div>
 
-        <div className="flex justify-between mb-[30px] relative before:content-[''] before:absolute before:top-[15px] before:left-[30px] before:right-[30px] before:h-[2px] before:bg-[#eee] before:z-0">
+        <div className="flex justify-between mb-2.5 md:mb-[30px] relative before:content-[''] before:absolute before:top-[15px] before:left-[30px] before:right-[30px] before:h-[2px] before:bg-[#eee] before:z-0">
           
           <div className="flex flex-col items-center relative z-10 bg-[var(--card-bg)] px-[10px]">
             <div className={`w-[32px] h-[32px] rounded-full flex items-center justify-center font-bold mb-[5px] transition-all duration-300 ${step > 1 ? 'bg-[var(--success-color)] text-white' : step === 1 ? 'bg-[var(--primary-color)] text-white shadow-[0_0_10px_rgba(106,27,154,0.3)]' : 'bg-[#eee] text-[#666]'}`}>
@@ -147,13 +147,13 @@ const ForgotPassword = () => {
             <p className="text-center text-muted mb-4 text-sm">
               Enter the 6-digit OTP sent to {email || 'your email'}.
             </p>
-            <div className="flex justify-between gap-[10px] mb-[20px]">
+            <div className="flex justify-between md:gap-[10px] mb-[20px]">
               {otp.map((digit, idx) => (
                 <input
                   key={idx}
                   id={`otp-${idx}`}
-                  type="text"
-                  className="w-[50px] h-[60px] text-center text-[1.5rem] font-bold border border-[#ddd] rounded-[10px] bg-[#f8f9fa] focus:border-[var(--primary-color)] focus:shadow-[0_0_0_0.2rem_rgba(106,27,154,0.25)] focus:outline-none"
+                  type="number"
+                  className="w-[30px] md:w-[50px] h-[35px] md:h-[60px] text-center text-[1.5rem] font-bold border border-[#ddd] rounded-[5px] md:rounded-[10px] bg-[#f8f9fa] focus:border-(--primary-color) focus:outline-none"
                   value={digit}
                   onChange={(e) => handleOtpChange(idx, e.target.value)}
                   maxLength={1}

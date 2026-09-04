@@ -24,7 +24,7 @@ const AuthLayout = ({ children, heroContent }) => {
           <div className="  absolute top-0 right-0 md:hidden w-full h-[100%] bg-position-[bottom_right_-2rem] bg-no-repeat bg-[url('/images/veloopbg.png')] bg-contain "></div>
           {heroContent}
         </div>
-        <div className="max-md:mx-3 flex flex-1 py-5 p-3 rounded-2xl md:p-10 bg-white flex-col lg:max-w-[550px] min-[992px]:rounded-[20px] lg:m-2.5 shadow-[5px_5px_15px_rgba(0,0,0,0.3)] ">
+        <div className="max-md:mx-3 flex flex-1 py-4 p-3 rounded-2xl md:p-10 bg-white flex-col lg:max-w-[550px] min-[992px]:rounded-[20px] lg:m-2.5 shadow-[5px_5px_15px_rgba(0,0,0,0.3)] ">
           {children}
         </div>
       </div>

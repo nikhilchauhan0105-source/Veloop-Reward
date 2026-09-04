@@ -11,13 +11,13 @@ const PasswordChecklist = ({ password }) => {
   ];
 
   return (
-    <div className="bg-[#f8f6fb] p-4 rounded-[12px] mb-4 text-[0.85rem]">
-      <p className="mb-3 font-semibold text-[#333]">Password must contain:</p>
-      <ul className="flex flex-col gap-2 m-0 p-0 list-none">
+    <div className="bg-[#f8f6fb] p-2 md:p-4 md:rounded-[12px] mb-4 text-[0.85rem]">
+      <p className="mb-1 md:mb-3 font-semibold text-[#333]">Password must contain:</p>
+      <ul className="flex flex-col gap-0 md:gap-2 m-0 p-0 list-none">
         {requirements.map((req, idx) => {
           const isMet = req.test(password);
           return (
-            <li key={idx} className={`flex items-center gap-2 ${isMet ? 'text-[var(--primary-color)]' : 'text-[#666]'}`}>
+            <li key={idx} className={`flex text-[12px] md:text-[0.85rem] items-center gap-2 ${isMet ? 'text-[var(--primary-color)]' : 'text-[#666]'}`}>
               {isMet ? (
                 <CheckCircle2 size={16} className="text-[#28a745]" />
               ) : (

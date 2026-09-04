@@ -110,14 +110,14 @@ const Login = () => {
 
         
           <div className="text-center  py-1 ">
-            <Link to="" className="w-full py-2 flex items-center justify-center gap-[10px] font-semibold text-[#333] cursor-pointer transition-colors duration-200 hover:bg-[#f8f9fa]" onClick={handleGoogleLogin}>
+            <Link to="" className="w-full py-2 text-sm sm:text-base flex items-center justify-center gap-[10px] font-semibold text-[#333] cursor-pointer transition-colors duration-200 hover:bg-[#f8f9fa]" onClick={handleGoogleLogin}>
               <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" width="20" height="20" />
               Continue with Google
             </Link>
           </div>
       
 
-        <div className="text-center  pt-2">
+        <div className="text-xs sm:text-base text-center  pt-2">
           <span className="text-muted">Don't have an account? </span>
           <Link to="/register" className="text-[var(--primary-color)] text-decoration-none font-semibold">
             Create Account

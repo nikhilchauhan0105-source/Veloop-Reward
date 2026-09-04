@@ -9,7 +9,7 @@ const PasswordInput = ({ value, onChange, placeholder = "Enter your password", n
       <Lock className="absolute left-[15px] text-[#888] z-10" size={20} />
       <input
         type={show ? "text" : "password"}
-        className="w-full pl-[45px] py-2 pr-[45px] rounded-[12px] bg-[#f8f9fa] border-2 border-[#e9ecef] transition-all duration-300 outline-none focus:bg-white focus:border-[var(--primary-light)] focus:shadow-[0_0_0_0.25rem_rgba(156,39,176,0.1)]"
+        className="w-full pl-[45px] py-2 pr-[45px] rounded-[5px] md:rounded-[12px] bg-[#f8f9fa] border-2 border-[#e9ecef] transition-all duration-300 outline-none focus:bg-white focus:border-[var(--primary-light)] focus:shadow-[0_0_0_0.25rem_rgba(156,39,176,0.1)]"
         placeholder={placeholder}
         value={value}
         onChange={onChange}
