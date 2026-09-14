@@ -69,28 +69,28 @@ const HeroContent = ({ title = "Welcome Back!", showStats = true , description }
           </div>
 
           <div className="flex flex-col xl:flex-row text-center items-center gap-3">
-            <div className="w-[42px] h-[42px] rounded-full bg-white flex items-center justify-center shadow-sm">
-              <Gift className="text-[var(--primary-color)]" size={22} />
+            <div className="w-10.5 h-10.5 rounded-full bg-white flex items-center justify-center shadow-sm">
+              <Gift className="text-(--primary-color)" size={22} />
             </div>
             <div className="flex flex-col">
-              <span className="text-[0.95rem] font-[700] text-[#111] leading-tight">
+              <span className="text-[0.95rem] font-bold text-[#111] leading-tight">
                 Instant Rewards
               </span>
-              <span className="text-[0.8rem] text-[#444] font-medium mt-[2px]">
+              <span className="text-[0.8rem] text-[#444] font-medium mt-0.5">
                 Earn as you engage
               </span>
             </div>
           </div>
 
           <div className="flex flex-col xl:flex-row text-center items-center gap-3">
-            <div className="w-[42px] h-[42px] rounded-full bg-white flex items-center justify-center shadow-sm">
-              <Shield className="text-[var(--primary-color)]" size={22} />
+            <div className="w-10.5 h-10.5 rounded-full bg-white flex items-center justify-center shadow-sm">
+              <Shield className="text-(--primary-color)" size={22} />
             </div>
             <div className="flex flex-col">
-              <span className="text-[0.95rem] font-[700] text-[#111] leading-tight">
+              <span className="text-[0.95rem] font-bold text-[#111] leading-tight">
                 Trusted Platform
               </span>
-              <span className="text-[0.8rem] text-[#444] font-medium mt-[2px]">
+              <span className="text-[0.8rem] text-[#444] font-medium mt-0.5">
                 Millions of happy users
               </span>
             </div>
