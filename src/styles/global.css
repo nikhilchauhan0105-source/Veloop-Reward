@@ -35,7 +35,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: var(--bg-gradient);
-  color: var(--text-main);
+  /* color: var(--text-main); */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -72,12 +72,3 @@ body {
   border-color: #5e1587;
 }
 
-/* Glassmorphism utility */
-/* .glass-panel {
-  background: var(--card-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: var(--border-radius);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: var(--card-shadow);
-} */
