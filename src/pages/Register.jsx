@@ -48,13 +48,13 @@ const Register = () => {
     toast.success('Redirecting to Google...');
   };
 
-  const tabBaseClass = "flex-1 text-center py-2 px-[5px] bg-transparent border-none text-[#667085] font-semibold text-xs sm:text-sm md:text-base cursor-pointer transition-all duration-200 flex flex-col items-center gap-2 relative hover:text-[var(--primary-color)] [&:not(:last-child)]:after:content-[''] [&:not(:last-child)]:after:absolute [&:not(:last-child)]:after:right-0 [&:not(:last-child)]:after:top-[25%] [&:not(:last-child)]:after:h-[50%] [&:not(:last-child)]:after:w-[1px] [&:not(:last-child)]:after:bg-[#eaeaea]";
+  const tabBaseClass = "flex-1 text-center py-[15px] px-[5px] bg-transparent border-none text-[#667085] font-semibold text-[0.85rem] cursor-pointer transition-all duration-200 flex flex-col items-center gap-2 relative hover:text-[var(--primary-color)] [&:not(:last-child)]:after:content-[''] [&:not(:last-child)]:after:absolute [&:not(:last-child)]:after:right-0 [&:not(:last-child)]:after:top-[25%] [&:not(:last-child)]:after:h-[50%] [&:not(:last-child)]:after:w-[1px] [&:not(:last-child)]:after:bg-[#eaeaea]";
   const tabActiveClass = "text-[var(--primary-color)] before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:-translate-x-1/2 before:w-[50px] before:h-[3px] before:bg-[var(--primary-color)] before:rounded-t-[3px]";
 
-  const inputGroupClass = "relative mb-2 md:mb-3 lg: flex items-center";
+  const inputGroupClass = "relative flex items-center";
   const inputIconClass = "absolute left-[15px] text-[#888] z-10";
-  const inputClass = "w-full sm:mt-[10px] pl-[45px] py-2 pr-[45px] rounded-[8px] sm:rounded-[12px] bg-[#f8f9fa] border-2 border-[#e9ecef] transition-all duration-300 outline-none focus:bg-white focus:border-[var(--primary-light)] focus:shadow-[0_0_0_0.25rem_rgba(156,39,176,0.1)]";
-  const submitBtnClass = "w-full py-2 rounded-xl! bg-[var(--primary-color)] text-white font-semibold text-[1rem] mt-[10px] mb-[20px] flex items-center justify-center gap-2 transition-transform duration-200 active:scale-[0.98] group";
+  const inputClass = "w-full pl-[45px] py-2 pr-[45px] rounded-[6px] sm:rounded-[12px] bg-[#f8f9fa] border-2 border-[#e9ecef] transition-all duration-300 outline-none focus:bg-white focus:border-[var(--primary-light)] focus:shadow-[0_0_0_0.25rem_rgba(156,39,176,0.1)]";
+  const submitBtnClass = "w-full py-2 rounded-[10px]! bg-[var(--primary-color)] text-white font-semibold text-[1rem] mt-[10px] mb-2 md:mb-[20px] flex items-center justify-center gap-2 transition-transform duration-200 active:scale-[0.98] group";
 
   return (
     <AuthLayout
@@ -65,12 +65,12 @@ const Register = () => {
         />
       }
     >
-      <div className="w-full ">
-        <div className="mb-3 text-center">
-          <h2 className="text-lg font-bold text-[#333] mb-[5px]">
+      <div className="w-full mx-auto">
+        <div className="">
+          <h2 className="text-lg font-medium md:font-bold text-[#111111] mb-1.25 text-center">
             Join VELOOP Rewards
           </h2>
-          <p className="text-[#666] text-xs sm:text-[0.95rem]">
+          <p className="text-xs sm:text-base max-w-[220px] sm:max-w-none m-auto text-black text-center mt-1 sm:mt-2.5">
             Start earning exciting rewards today.
           </p>
         </div>
@@ -91,7 +91,7 @@ const Register = () => {
         </div>
 
         {activeTab === "email" && (
-          <form onSubmit={handleRegister}>
+          <form className="space-y-[20px]" onSubmit={handleRegister}>
             <div className={inputGroupClass}>
               <User className={inputIconClass} size={20} />
               <input
@@ -118,7 +118,7 @@ const Register = () => {
               />
             </div>
 
-            <div className="mb-3 grid grid-cols-1 min-[576px]:grid-cols-2 gap-3 min-[576px]:gap-[15px]">
+            <div className="grid grid-cols-1 min-[576px]:grid-cols-2 gap-3 min-[576px]:gap-[15px]">
               <PasswordInput
                 name="password"
                 placeholder="Create password"
@@ -217,22 +217,24 @@ const Register = () => {
           OR
         </div>
 
-        <button
-          type="button"
-          className="text-sm! sm:text-base! w-full py-2 hover:underline hover:underline-offset-2 flex items-center justify-center gap-[10px] font-semibold text-[#333] cursor-pointer transition-colors duration-200 "
-          onClick={handleGoogleSignUp}
-        >
-          <img
-            src="https://www.svgrepo.com/show/475656/google-color.svg"
-            alt="Google"
-            width="20"
-            height="20"
-          />
-          Sign Up with Google
-        </button>
+        <div className="text-center py-1">
+          <button
+            type="button"
+            className="w-full py-2 text-sm sm:text-base flex items-center justify-center gap-[10px] font-semibold text-[#333] cursor-pointer transition-colors duration-200 hover:bg-[#f8f9fa] border-none bg-transparent"
+            onClick={handleGoogleSignUp}
+          >
+            <img
+              src="https://www.svgrepo.com/show/475656/google-color.svg"
+              alt="Google"
+              width="20"
+              height="20"
+            />
+            Sign Up with Google
+          </button>
+        </div>
 
-        <div className="text-center  md:mt-4">
-          <span className="text-muted text-sm! sm:text-base!">Already have an account? </span>
+        <div className="text-xs sm:text-base text-center pt-2">
+          <span className="text-muted">Already have an account? </span>
           <Link
             to="/login"
             style={{

@@ -79,18 +79,22 @@ const ForgotPassword = () => {
     }, 1500);
   };
 
-  const inputClass = "w-full pl-[45px] py-2 pr-[45px]  rounded-[12px] bg-[#f8f9fa] border-2 border-[#e9ecef] transition-all duration-300 outline-none focus:bg-white focus:border-[var(--primary-light)] focus:shadow-[0_0_0_0.25rem_rgba(156,39,176,0.1)]";
-  const submitBtnClass = "w-full py-2 rounded-sm! md:rounded-[20px]! bg-[var(--primary-color)] text-white font-semibold text-[1rem] mt-[10px] mb-[20px] flex items-center justify-center gap-2 transition-transform duration-200 active:scale-[0.98] group";
+  const inputClass = "w-full pl-[45px] py-2 pr-[45px] rounded-[6px] sm:rounded-[12px] bg-[#f8f9fa] border-2 border-[#e9ecef] transition-all duration-300 outline-none focus:bg-white focus:border-[var(--primary-light)] focus:shadow-[0_0_0_0.25rem_rgba(156,39,176,0.1)]";
+  const submitBtnClass = "w-full py-2 rounded-[10px]! bg-[var(--primary-color)] text-white font-semibold text-[1rem] mt-[10px] mb-2 md:mb-[20px] flex items-center justify-center gap-2 transition-transform duration-200 active:scale-[0.98] group";
 
   return (
   <AuthLayout heroContent={<HeroContent title="Forgot Password?" showStats={false} description={"No worries Reset your password in few simple steps."} />}>
       <div className="w-full max-w-[450px] mx-auto">
-        <div className="mb-2.5 sm:mb-[30px] text-center">
-          <h2 className="text-[1.8rem] font-bold text-[#333] mb-[10px]">Password Reset</h2>
-          <p className="text-[#666] text-xs sm:text-[0.95rem]">No worries! Reset your password in a few simple steps.</p>
+        <div className="">
+          <h2 className="text-lg font-medium md:font-bold text-[#111111] mb-1.25 text-center">
+            Password Reset
+          </h2>
+          <p className="text-xs sm:text-base max-w-[220px] sm:max-w-none m-auto text-black text-center mt-1 sm:mt-2.5">
+            No worries! Reset your password in a few simple steps.
+          </p>
         </div>
 
-        <div className="flex justify-between mb-2.5 md:mb-[30px] relative before:content-[''] before:absolute before:top-[15px] before:left-[30px] before:right-[30px] before:h-[2px] before:bg-[#eee] before:z-0">
+        <div className="flex justify-between mb-2.5 md:mb-[30px] relative before:content-[''] before:absolute before:top-[15px] before:left-[30px] before:right-[30px] before:h-[2px] before:bg-[#eee] before:z-0 mt-5">
           
           <div className="flex flex-col items-center relative z-10 bg-[var(--card-bg)] px-[10px]">
             <div className={`w-[32px] h-[32px] rounded-full flex items-center justify-center font-bold mb-[5px] transition-all duration-300 ${step > 1 ? 'bg-[var(--success-color)] text-white' : step === 1 ? 'bg-[var(--primary-color)] text-white shadow-[0_0_10px_rgba(106,27,154,0.3)]' : 'bg-[#eee] text-[#666]'}`}>
@@ -134,9 +138,9 @@ const ForgotPassword = () => {
             <button type="submit" className={submitBtnClass}>
               Send Reset OTP <ArrowRight className="group-hover:translate-x-1 transition-all duration-200" size={18} />
             </button>
-            <div className="text-center mt-4">
+            <div className="text-xs sm:text-base text-center pt-2">
               <Link to="/login" className="text-muted text-decoration-none">
-                or <span style={{color: 'var(--primary-color)', fontWeight: 600}}>Back to Login</span>
+                or <span className="text-[var(--primary-color)] font-semibold">Back to Login</span>
               </Link>
             </div>
           </form>
